@@ -1,0 +1,77 @@
+﻿using Microsoft.AspNetCore.Authentication.Cookies;
+using WebApplication1.Services;
+
+var builder = WebApplication.CreateBuilder(args);
+
+// 1) MVC
+builder.Services.AddControllersWithViews();
+
+// 2) Distributed Cache + Session
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+    options.Cookie.SameSite = SameSiteMode.Lax;
+});
+
+// 3) HttpContextAccessor (LogService veya diğer servisler için)
+builder.Services.AddHttpContextAccessor();
+
+// 4) HttpClientFactory
+builder.Services.AddHttpClient();
+
+// 5) LogService
+builder.Services.AddScoped<LogService>();
+
+// 6) Cookie-based Authentication
+builder.Services
+    .AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/Login";
+        options.LogoutPath = "/Login/Logout";
+        options.ExpireTimeSpan = TimeSpan.FromHours(1);
+
+        options.Cookie.HttpOnly = true;
+        options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+        options.Cookie.SameSite = SameSiteMode.Lax;
+
+    });
+
+builder.Services.Configure<CookiePolicyOptions>(options =>
+{
+    options.CheckConsentNeeded = _ => false;
+    options.MinimumSameSitePolicy = SameSiteMode.Lax;
+});
+
+// 7) Authorization
+builder.Services.AddAuthorization();
+
+var app = builder.Build();
+
+// 8) Middleware Pipeline
+if (!app.Environment.IsDevelopment())
+{
+    app.UseExceptionHandler("/Home/Error");
+    app.UseHsts();
+}
+
+app.UseHttpsRedirection();
+app.UseStaticFiles();
+app.UseRouting();
+
+app.UseCookiePolicy();
+
+// Session must come before Authentication
+app.UseSession();
+app.UseAuthentication();
+app.UseAuthorization();
+
+// 9) Route
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Login}/{action=Index}/{id?}");
+
+app.Run();

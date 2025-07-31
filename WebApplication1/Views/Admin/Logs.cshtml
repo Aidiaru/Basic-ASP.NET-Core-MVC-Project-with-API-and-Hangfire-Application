@@ -1,0 +1,79 @@
+﻿@model WebApplication1.Models.LogsViewModel
+
+@{
+    ViewData["Title"] = "Loglar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="mb-4">Sunucu Logları</h2>
+
+@if (ViewData["Error"] != null)
+{
+    <div class="alert alert-danger">
+        @ViewData["Error"]
+    </div>
+}
+
+<form asp-action="Logs" method="get" class="mb-3">
+    <div class="input-group w-50">
+        <input type="text"
+               name="search"
+               value="@Model.Search"
+               placeholder="Arama yap..."
+               class="form-control" />
+        <input type="hidden" name="pageSize" value="@Model.PageSize" />
+        <button type="submit" class="btn btn-primary ms-2">Ara</button>
+    </div>
+</form>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Tarih</th>
+            <th>Seviye</th>
+            <th>Logger</th>
+            <th>Mesaj</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var (log, idx) in Model.Logs.Select((l, i) => (l, i)))
+        {
+            <tr>
+                <td>@((Model.Page - 1) * Model.PageSize + idx + 1)</td>
+                <td>@log.Date.ToString("yyyy-MM-dd HH:mm:ss.fff")</td>
+                <td>@log.Level</td>
+                <td>@log.Logger</td>
+                <td>@log.Message</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<nav aria-label="Sayfa navigasyonu">
+    <ul class="pagination">
+        <li class="page-item @(Model.Page <= 1 ? "disabled" : "")">
+            <a class="page-link"
+               asp-action="Logs"
+               asp-route-page="@(Model.Page - 1)"
+               asp-route-pageSize="@Model.PageSize"
+               asp-route-search="@Model.Search">
+                ← Önceki
+            </a>
+        </li>
+        <li class="page-item disabled">
+            <span class="page-link">
+                Sayfa @Model.Page / @Model.TotalPages
+            </span>
+        </li>
+        <li class="page-item @(Model.Page >= Model.TotalPages ? "disabled" : "")">
+            <a class="page-link"
+               asp-action="Logs"
+               asp-route-page="@(Model.Page + 1)"
+               asp-route-pageSize="@Model.PageSize"
+               asp-route-search="@Model.Search">
+                Sonraki →
+            </a>
+        </li>
+    </ul>
+</nav>

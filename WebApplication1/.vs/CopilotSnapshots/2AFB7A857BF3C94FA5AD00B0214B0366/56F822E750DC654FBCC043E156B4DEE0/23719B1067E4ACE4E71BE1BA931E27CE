@@ -1,0 +1,22 @@
+﻿namespace WebApplication1.Models
+{
+    public class LoginResponseDto
+    {
+        // API geri dönüşünde dönen mesaj (opsiyonel)
+        public string Message { get; set; }
+
+        // İstemciye verdiğimiz User bilgisi
+        public UserDto User { get; set; }
+
+        public string Token { get; set; }
+
+        public Guid SessionId { get; set; } 
+    }
+
+    public class UserDto
+    {
+        public int Id { get; set; }
+        public string Email { get; set; }
+        public string Role { get; set; }
+    }
+}

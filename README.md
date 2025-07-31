@@ -1,70 +1,85 @@
-# .NET 9 Çok Katmanlı Uygulama Çözümü
+# ASP.NET Core Full-Stack Solution
 
-Bu repository, modern bir .NET 9 ekosisteminde geliştirilmiş, çok katmanlı bir uygulama örneği içerir. Çözümde; bir WebAPI, bir Razor Pages/MVC tabanlı web uygulaması ve Hangfire ile arka plan görevlerini yöneten bir servis bulunmaktadır.
+This repository contains a comprehensive full-stack web solution built using modern ASP.NET Core technologies. The system consists of a Razor Pages/MVC web application, RESTful API, and background task processing components.
 
-## Proje Yapısı
+## Solution Components
 
-- **WebAPI**  
-  .NET 9 ile geliştirilmiş, JWT tabanlı kimlik doğrulama, ürün/kullanıcı/log yönetimi, Redis cache, rate limiting ve Swagger/OpenAPI desteği sunan RESTful API projesi.
+### 1. Web Application (WebApplication1)
+- ASP.NET Core Razor Pages/MVC architecture
+- JWT-based authentication and session management
+- User management and admin panel
+- Product listing and management
+- Log viewing and system monitoring
+- Responsive interface with Bootstrap and jQuery
 
-- **WebApplication1**  
-  Razor Pages/MVC mimarisiyle geliştirilmiş, kullanıcıların ürünleri ve kullanıcıları yönetebildiği, JWT ile oturum açma ve rol tabanlı erişim sağlayan modern bir web arayüzü.
+### 2. WebAPI
+- .NET 9 Web API
+- JWT authentication and authorization
+- Entity Framework Core with SQL Server integration
+- Redis cache management
+- Rate limiting and API security
+- Swagger/OpenAPI documentation
+- Centralized error handling
 
-- **HangfireConsoleApp**  
-  Hangfire ve SQL Server kullanarak arka planda periyodik olarak WebAPI’den veri çeken ve işleri izlemek için dashboard sunan bir arka plan servis uygulaması.
+### 3. Background Processing Service (HangfireConsoleApp)
+- Scheduled tasks with Hangfire
+- Standalone console application
+- Background worker for asynchronous operations
 
-## Başlıca Özellikler
+## ASP.NET Core Technologies Used
 
-- JWT ile kimlik doğrulama ve yetkilendirme
-- Ürün, kullanıcı ve log yönetimi (CRUD)
-- Redis ile cache mekanizması
-- Rate limiting (istek kısıtlama)
-- Swagger/OpenAPI ile API dokümantasyonu
-- Hangfire ile zamanlanmış arka plan görevleri
-- Modern ve kullanıcı dostu arayüz (Bootstrap, jQuery)
-- SQL Server ile veri saklama
+- **Authentication & Authorization**: JWT token-based authentication, role-based authorization
+- **Data Access**: Entity Framework Core, SQL Server
+- **API Development**: RESTful API design, Swagger/OpenAPI
+- **UI Development**: Razor Pages, MVC, Bootstrap
+- **Performance Optimization**: Redis caching, rate limiting
+- **Background Processing**: Job scheduling with Hangfire
+- **Logging & Monitoring**: NLog integration, custom log API
+- **Security**: JWT validation, password hashing (BCrypt)
+- **Deployment & Configuration**: Multi-environment configurations, connection resilience
 
-## Kurulum ve Çalıştırma
+## Setup
 
-### 1. Ortam Gereksinimleri
+### Requirements
 - .NET 9 SDK
-- SQL Server (ör. Express veya Docker ile)
-- Redis (ör. Docker ile)
-- Visual Studio 2022 veya VS Code
+- SQL Server
+- Redis Server
+- Visual Studio 2022 (recommended)
 
-### 2. Bağımlılıkların Yüklenmesi
-Her proje klasöründe aşağıdaki komutu çalıştırarak NuGet bağımlılıklarını yükleyin:
-dotnet restore
+### Steps
+1. Clone the repository
+2. Configure the `appsettings.json` files in each project for your environment:
+   - SQL Server connection string
+   - Redis connection information
+   - JWT key and configuration
+3. Create the SQL Server database:
+dotnet ef database update --project WebAPI
 
+4. Ensure Redis server is running
+5. Start the projects in the following order:
+- WebAPI
+- HangfireConsoleApp (optional)
+- WebApplication1
 
-### 3. Veritabanı ve Redis
-- SQL Server ve Redis servislerinin çalıştığından emin olun.
-- Gerekirse `appsettings.json` dosyalarındaki bağlantı ayarlarını güncelleyin.
+## Project Structure
 
-### 4. Projeleri Çalıştırma
+- **WebApplication1/**: Razor Pages/MVC web application
+- **WebAPI/**: RESTful API services
+- **HangfireConsoleApp/**: Background processing service
+- **Shared/**: Shared models and helper classes (if any)
 
-#### WebAPI
-cd WebAPI dotnet run
-Swagger arayüzüne [https://localhost:7209/swagger](https://localhost:7209/swagger) adresinden erişebilirsiniz.
+## Development Notes
 
-#### WebApplication1
-cd WebApplication1 dotnet run
-Uygulamaya [https://localhost:7299](https://localhost:7299) adresinden erişebilirsiniz.
+- WebAPI is configured to run over HTTPS
+- Swagger interface is accessible at `/swagger`
+- JWT token is required for API communication
+- Session information is stored in the session
+- NLog configuration is available for debugging and testing
 
-#### HangfireConsoleApp
-cd HangfireConsoleApp dotnet run
-Hangfire Dashboard: [http://localhost:5000/hangfire](http://localhost:5000/hangfire)
+## License
 
-## Notlar
+This project is licensed under the [MIT License](LICENSE).
 
-- Tüm projelerin aynı anda çalışıyor olması gerekir.
-- JWT ile kimlik doğrulama için WebAPI üzerinden login olmanız gerekmektedir.
-- Geliştirme ortamında HTTPS sertifikası gereklidir.
-- Varsayılan kullanıcı ve şifreler ile ilgili bilgileri ilgili API veya dokümantasyondan kontrol ediniz.
+## Contributing
 
-## Katkı ve Lisans
-
-Bu proje eğitim ve örnek amaçlıdır. Katkıda bulunmak için fork’layabilir ve pull request gönderebilirsiniz.
-
----
-
+To contribute, please open an issue or submit a pull request.

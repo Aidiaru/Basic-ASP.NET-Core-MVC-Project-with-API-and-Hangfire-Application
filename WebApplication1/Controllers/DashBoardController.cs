@@ -1,0 +1,57 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Net.Http.Json;
+using System.Text.Json;
+using System.Threading.Tasks;
+using WebApplication1.Models;
+
+public class DashboardController : Controller
+{
+    private readonly ILogger<DashboardController> _logger;
+    private readonly IHttpClientFactory _clientFactory;
+    private readonly JsonSerializerOptions _jsonOptions = new()
+    {
+        PropertyNameCaseInsensitive = true
+    };
+
+    public DashboardController(
+        ILogger<DashboardController> logger,
+        IHttpClientFactory clientFactory)
+    {
+        _logger = logger;
+        _clientFactory = clientFactory;
+    }
+
+    public async Task<IActionResult> Index()
+    {
+        // JWT token'ı session'dan al
+        var token = HttpContext.Session.GetString("JWToken");
+        if (string.IsNullOrEmpty(token))
+            return RedirectToAction("Index", "Login");
+
+        var client = _clientFactory.CreateClient();
+        client.BaseAddress = new Uri("https://localhost:7209/");
+        client.DefaultRequestHeaders.Authorization =
+            new AuthenticationHeaderValue("Bearer", token);
+
+        var response = await client.GetAsync("api/ProductApi");
+        if (!response.IsSuccessStatusCode)
+        {
+            if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
+            {
+                HttpContext.Session.Clear();
+                return RedirectToAction("Index", "Login");
+            }
+            _logger.LogWarning("Ürün verileri alınamadı.");
+            return View(new List<ProductDto>());
+        }
+
+        var products = await response.Content
+            .ReadFromJsonAsync<List<ProductDto>>(_jsonOptions);
+        return View(products);
+    }
+}

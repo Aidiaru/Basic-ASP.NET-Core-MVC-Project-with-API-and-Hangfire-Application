@@ -1,0 +1,392 @@
+﻿@model List<WebApplication1.Models.ProductDto>
+@{
+    ViewData["Title"] = "Ürünler";
+}
+
+<!-- Breadcrumb -->
+<nav aria-label="breadcrumb" class="mt-3">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Ana Sayfa</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Ürünler</li>
+    </ol>
+</nav>
+
+<!-- Alert (placeholder) -->
+<div class="alert alert-info alert-dismissible fade show" role="alert">
+    <strong>Bilgi!</strong> Bu sayfa demo amaçlı modern UI öğeleri içermektedir.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Kapat"></button>
+</div>
+
+<!-- Tema Switcher (Dark/Light) -->
+<div class="d-flex justify-content-end mb-2">
+    <button id="themeToggle" class="btn btn-outline-secondary btn-sm">
+        <i class="bi bi-moon"></i> Tema Değiştir
+    </button>
+</div>
+
+<!-- Arama ve Filtreleme -->
+<div class="row mb-3">
+    <div class="col-md-6">
+        <input type="text" class="form-control" id="searchBox" placeholder="Ürünlerde ara..." />
+    </div>
+    <div class="col-md-6 text-end">
+        <select class="form-select w-auto d-inline" id="priceFilter">
+            <option value="">Fiyat filtresi</option>
+            <option value="0-50">0-50₺</option>
+            <option value="51-100">51-100₺</option>
+            <option value="101-500">101-500₺</option>
+        </select>
+    </div>
+</div>
+
+<!-- Yükleniyor Spinner (placeholder) -->
+<div id="loadingSpinner" class="text-center my-3" style="display:none;">
+    <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Yükleniyor...</span>
+    </div>
+</div>
+
+<h2 class="mt-3">
+    Ürün Listesi
+    <button class="btn btn-success float-end" onclick="showCreateModal()">
+        <i class="bi bi-plus-circle"></i> Yeni Ürün Ekle
+    </button>
+</h2>
+
+@if (Model != null && Model.Any())
+{
+    <table class="table table-bordered table-striped">
+        <thead class="table-primary">
+            <tr>
+                <th>Ürün Adı</th>
+                <th>Fiyat</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model)
+            {
+                <tr>
+                    <td>@product.Name</td>
+                    <td>@product.Price ₺</td>
+                    <td>
+                        <button class="btn btn-sm btn-warning me-1" onclick="editProduct(@product.Id, '@product.Name', @product.Price)">Düzenle</button>
+                        <button class="btn btn-sm btn-danger" onclick="deleteProduct(@product.Id)">Sil</button>
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p class="text-warning">Hiç ürün bulunamadı.</p>
+}
+
+<!-- Modal (Ekleme) -->
+<div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="createModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="createModalLabel">Yeni Ürün Ekle</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+            </div>
+            <form id="createForm">
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Ürün Adı</label>
+                        <input type="text" id="name" class="form-control" placeholder="Ürün adı" required />
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="price" class="form-label">Ürün Fiyatı</label>
+                        <input type="number" id="price" class="form-control" placeholder="Fiyat ₺" step="0.01" required />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
+                    <button type="submit" class="btn btn-success">Ekle</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal (Düzenleme) -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editModalLabel">Ürün Düzenle</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+            </div>
+            <form id="editForm">
+                <div class="modal-body">
+                    <input type="hidden" id="editId" />
+                    
+                    <div class="mb-3">
+                        <label for="editName" class="form-label">Ürün Adı</label>
+                        <input type="text" id="editName" class="form-control" placeholder="Ürün adı" required />
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="editPrice" class="form-label">Ürün Fiyatı</label>
+                        <input type="number" id="editPrice" class="form-control" placeholder="Fiyat ₺" step="0.01" required />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
+                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal (Silme onayı) -->
+<div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmModalLabel">Ürünü Sil</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+            </div>
+            <div class="modal-body">
+                Bu ürünü silmek istediğinize emin misiniz?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
+                <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Sil</button>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script>
+        // Yeni ürün ekleme
+        document.getElementById("createForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+            
+            const name = document.getElementById("name").value;
+            const price = document.getElementById("price").value;
+            
+            // Yükleniyor göstergesi
+            document.getElementById("loadingSpinner").style.display = "block";
+            
+            fetch("/Products/Create", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                    "X-Requested-With": "XMLHttpRequest"
+                },
+                body: `name=${encodeURIComponent(name)}&price=${encodeURIComponent(price)}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("loadingSpinner").style.display = "none";
+                
+                if (data.success) {
+                    // Notify.js ile başarı bildirimi
+                    $.notify(data.message, { 
+                        className: 'success', 
+                        autoHideDelay: 4000 
+                    });
+                    
+                    // Form alanlarını temizle
+                    document.getElementById("name").value = "";
+                    document.getElementById("price").value = "";
+                    
+                    // Sayfayı yenile
+                    setTimeout(function() {
+                        window.location.reload();
+                    }, 1000);
+                } else {
+                    // Notify.js ile hata bildirimi
+                    $.notify(data.message, { 
+                        className: 'error', 
+                        autoHideDelay: 4000 
+                    });
+                }
+            })
+            .catch(error => {
+                document.getElementById("loadingSpinner").style.display = "none";
+                console.error("Hata:", error);
+                $.notify("İşlem sırasında bir hata oluştu.", { 
+                    className: 'error', 
+                    autoHideDelay: 4000 
+                });
+            });
+        });
+        
+        // Ürün düzenleme modalını göster
+        function editProduct(id, name, price) {
+            // Form alanlarını doldur
+            document.getElementById("editId").value = id;
+            document.getElementById("editName").value = name;
+            document.getElementById("editPrice").value = price;
+            
+            // Modalı göster
+            const modal = new bootstrap.Modal(document.getElementById('editModal'));
+            modal.show();
+        }
+        
+        // Düzenlenen ürünü kaydet
+        document.getElementById("editForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+            
+            const id = document.getElementById("editId").value;
+            const name = document.getElementById("editName").value;
+            const price = document.getElementById("editPrice").value;
+            
+            // Yükleniyor göstergesi
+            document.getElementById("loadingSpinner").style.display = "block";
+            
+            fetch("/Products/Edit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                    "X-Requested-With": "XMLHttpRequest"
+                },
+                body: `id=${encodeURIComponent(id)}&name=${encodeURIComponent(name)}&price=${encodeURIComponent(price)}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("loadingSpinner").style.display = "none";
+                
+                // Modalı kapat
+                bootstrap.Modal.getInstance(document.getElementById('editModal')).hide();
+                
+                if (data.success) {
+                    // Notify.js ile başarı bildirimi
+                    $.notify(data.message, { 
+                        className: 'success', 
+                        autoHideDelay: 4000 
+                    });
+                    
+                    // Sayfayı yenile
+                    setTimeout(function() {
+                        window.location.reload();
+                    }, 1000);
+                } else {
+                    // Notify.js ile hata bildirimi
+                    $.notify(data.message, { 
+                        className: 'error', 
+                        autoHideDelay: 4000 
+                    });
+                }
+            })
+            .catch(error => {
+                document.getElementById("loadingSpinner").style.display = "none";
+                console.error("Hata:", error);
+                $.notify("İşlem sırasında bir hata oluştu.", { 
+                    className: 'error', 
+                    autoHideDelay: 4000 
+                });
+            });
+        });
+        
+        // Silme işlemi için ID'yi sakla
+        let deleteProductId = null;
+        
+        // Silme onay modalını göster
+        function deleteProduct(id) {
+            deleteProductId = id;
+            const modal = new bootstrap.Modal(document.getElementById('confirmModal'));
+            modal.show();
+        }
+        
+        // Silme işlemini onayla
+        document.getElementById("confirmDeleteBtn").addEventListener("click", function () {
+            if (deleteProductId === null) return;
+            
+            // Yükleniyor göstergesi
+            document.getElementById("loadingSpinner").style.display = "block";
+            
+            fetch(`/Products/Delete?id=${deleteProductId}`, {
+                method: "POST",
+                headers: {
+                    "X-Requested-With": "XMLHttpRequest"
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("loadingSpinner").style.display = "none";
+                
+                // Modal'ı kapat
+                bootstrap.Modal.getInstance(document.getElementById('confirmModal')).hide();
+                
+                if (data.success) {
+                    // Notify.js ile başarı bildirimi
+                    $.notify(data.message, { 
+                        className: 'success', 
+                        autoHideDelay: 4000 
+                    });
+                    
+                    // Sayfayı yenile
+                    setTimeout(function() {
+                        window.location.reload();
+                    }, 1000);
+                } else {
+                    // Notify.js ile hata bildirimi
+                    $.notify(data.message, { 
+                        className: 'error', 
+                        autoHideDelay: 4000 
+                    });
+                }
+            })
+            .catch(error => {
+                document.getElementById("loadingSpinner").style.display = "none";
+                console.error("Hata:", error);
+                $.notify("İşlem sırasında bir hata oluştu.", { 
+                    className: 'error', 
+                    autoHideDelay: 4000 
+                });
+            });
+        });
+        
+        // Arama kutusunda filtreleme
+        document.getElementById("searchBox").addEventListener("input", function() {
+            const searchTerm = this.value.toLowerCase().trim();
+            const rows = document.querySelectorAll("table tbody tr");
+            
+            rows.forEach(row => {
+                const productName = row.cells[0].textContent.toLowerCase();
+                row.style.display = productName.includes(searchTerm) ? "" : "none";
+            });
+        });
+        
+        // Fiyat filtresi
+        document.getElementById("priceFilter").addEventListener("change", function() {
+            const filterValue = this.value;
+            const rows = document.querySelectorAll("table tbody tr");
+            
+            if (!filterValue) {
+                rows.forEach(row => row.style.display = "");
+                return;
+            }
+            
+            const [min, max] = filterValue.split("-").map(Number);
+            
+            rows.forEach(row => {
+                const priceText = row.cells[1].textContent;
+                const price = parseInt(priceText.replace("₺", "").trim());
+                
+                if (max) {
+                    row.style.display = (price >= min && price <= max) ? "" : "none";
+                } else {
+                    row.style.display = (price >= min) ? "" : "none";
+                }
+            });
+        });
+        
+        // Yeni ürün ekleme modalını göster
+        function showCreateModal() {
+            // Modalı sıfırla
+            document.getElementById("createForm").reset();
+            
+            // Modalı göster
+            const modal = new bootstrap.Modal(document.getElementById('createModal'));
+            modal.show();
+        }
+    </script>
+}

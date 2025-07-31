@@ -1,0 +1,205 @@
+/* 1. CSS Deðiþkenleri */
+:root {
+    /* Renkler */
+    --primary-color: #0062E6;
+    --secondary-color: #33AEFF;
+    --gradient-primary-start: #0062E6;
+    --gradient-primary-end: #33AEFF;
+    --bs-secondary-color: #6c757d;
+    /* Font */
+    --font-family-base: 'Poppins', sans-serif;
+}
+
+/* 2. Tipografi */
+body, .font-poppins {
+    font-family: var(--font-family-base);
+}
+
+/* 3. Responsive Font Size */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+/* 4. Odak (focus) Stilleri */
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem var(--primary-color);
+}
+
+/* 5. Sayfa Alt Boþluðu */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: #f8f9fa;
+}
+
+/* 6. Placeholder Hizalamalarý */
+.form-floating > .form-control-plaintext::placeholder,
+.form-floating > .form-control::placeholder {
+    color: var(--bs-secondary-color);
+    text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder,
+.form-floating > .form-control:focus::placeholder {
+    text-align: start;
+}
+
+/* 7. Gradient Sýnýfý */
+.bg-gradient-primary {
+    background: linear-gradient( 90deg, var(--gradient-primary-start), var(--gradient-primary-end) );
+    color: white !important;
+}
+
+/* Custom Styles */
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: #f6f8fa;
+    color: #222;
+}
+
+h1, h2, h3, h4, h5 {
+    font-weight: 600;
+    color: #2563eb;
+    margin-bottom: 1rem;
+}
+
+.card {
+    border-radius: 1rem;
+    box-shadow: 0 2px 16px rgba(37,99,235,0.08);
+    border: none;
+    transition: box-shadow 0.2s;
+    background: #fff;
+}
+.card:hover {
+    box-shadow: 0 4px 24px rgba(37,99,235,0.15);
+}
+
+.btn-primary, .btn-outline-primary {
+    background-color: #2563eb;
+    border-color: #2563eb;
+    color: #fff;
+}
+.btn-outline-primary {
+    background: transparent;
+    color: #2563eb;
+}
+.btn-outline-primary:hover, .btn-primary:hover {
+    background-color: #1746a2;
+    border-color: #1746a2;
+    color: #fff;
+}
+
+.btn-success, .btn-outline-success {
+    background-color: #22c55e;
+    border-color: #22c55e;
+    color: #fff;
+}
+.btn-outline-success {
+    background: transparent;
+    color: #22c55e;
+}
+.btn-outline-success:hover, .btn-success:hover {
+    background-color: #15803d;
+    border-color: #15803d;
+    color: #fff;
+}
+
+.btn-warning, .btn-outline-warning {
+    background-color: #facc15;
+    border-color: #facc15;
+    color: #222;
+}
+.btn-outline-warning {
+    background: transparent;
+    color: #facc15;
+}
+.btn-outline-warning:hover, .btn-warning:hover {
+    background-color: #ca8a04;
+    border-color: #ca8a04;
+    color: #fff;
+}
+
+.btn-info, .btn-outline-info {
+    background-color: #0ea5e9;
+    border-color: #0ea5e9;
+    color: #fff;
+}
+.btn-outline-info {
+    background: transparent;
+    color: #0ea5e9;
+}
+.btn-outline-info:hover, .btn-info:hover {
+    background-color: #0369a1;
+    border-color: #0369a1;
+    color: #fff;
+}
+
+.form-control, .form-select {
+    border-radius: 0.7rem;
+    border: 1px solid #e5e7eb;
+    background: #f9fafb;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+.form-control:focus, .form-select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37,99,235,0.15);
+}
+
+.breadcrumb {
+    background: transparent;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.alert {
+    border-radius: 0.7rem;
+    font-size: 1rem;
+}
+
+.avatar {
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.10);
+    border: 2px solid #e5e7eb;
+}
+
+.table {
+    border-radius: 1rem;
+    overflow: hidden;
+    background: #fff;
+}
+.table th {
+    background: #2563eb;
+    color: #fff;
+    font-weight: 500;
+}
+.table td {
+    vertical-align: middle;
+}
+
+.bg-gradient-primary {
+    background: linear-gradient(90deg, #2563eb 0%, #1746a2 100%);
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    background: #e5e7eb;
+}
+::-webkit-scrollbar-thumb {
+    background: #2563eb;
+    border-radius: 4px;
+}

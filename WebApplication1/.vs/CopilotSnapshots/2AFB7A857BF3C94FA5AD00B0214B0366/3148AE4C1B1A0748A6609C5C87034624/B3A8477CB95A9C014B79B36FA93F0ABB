@@ -1,0 +1,27 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
+using WebApplication1.Models;
+
+public class HomeController : Controller
+{
+    public async Task<IActionResult> Index()
+    {
+        var token = HttpContext.Session.GetString("JWToken");
+        var sessionId = HttpContext.Session.GetString("SessionId");
+        if (string.IsNullOrEmpty(token) || string.IsNullOrEmpty(sessionId))
+            return RedirectToAction("Index", "Login");
+
+        return View();
+    }
+
+    public IActionResult Privacy() => View();
+
+    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+    public IActionResult Error()
+    {
+        return View(new ErrorViewModel
+        {
+            RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier
+        });
+    }
+}

@@ -1,0 +1,98 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!-- Hero Section -->
+<div class="row align-items-center mb-5">
+    <div class="col-md-7">
+        <h1 class="display-4 fw-bold mb-3">Orçun'un Uygulamasına Hoş Geldin 🎉</h1>
+        <p class="lead mb-4 text-secondary">
+            Modern ve güvenli bir ürün yönetim platformuna hoş geldin.<br />
+            Ürünleri görüntülemek, eklemek ve düzenlemek için Dashboard'a geçebilirsin.
+        </p>
+        <a href="/Dashboard" class="btn btn-primary btn-lg me-2 shadow-sm">
+            <i class="fas fa-tachometer-alt me-1"></i> Dashboard'a Git
+        </a>
+        <a href="/Products" class="btn btn-outline-success btn-lg shadow-sm">
+            <i class="fas fa-box-open me-1"></i> Ürünler
+        </a>
+    </div>
+    <div class="col-md-5 text-center">
+        <img src="~/images/undraw_dashboard_p93p.svg" alt="Dashboard" class="img-fluid avatar shadow" style="max-height: 260px;" />
+    </div>
+</div>
+
+<!-- Özellikler/Kartlar -->
+<div class="row text-center mb-5">
+    <div class="col-md-4 mb-3">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <i class="fas fa-lock fa-2x text-primary mb-2"></i>
+                <h5 class="card-title">Güvenli Giriş</h5>
+                <p class="card-text text-secondary">JWT tabanlı oturum ile verilerin güvende.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-3">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <i class="fas fa-chart-line fa-2x text-success mb-2"></i>
+                <h5 class="card-title">Kolay Yönetim</h5>
+                <p class="card-text text-secondary">Ürünleri ve kullanıcıları kolayca yönet.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-3">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <i class="fas fa-cogs fa-2x text-warning mb-2"></i>
+                <h5 class="card-title">Arka Plan İşleri</h5>
+                <p class="card-text text-secondary">Hangfire ile otomatik veri çekme ve job yönetimi.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Sık Kullanılanlar / Kısayollar -->
+<div class="row mb-5">
+    <div class="col-md-12">
+        <h4 class="mb-3 text-primary">Kısayollar</h4>
+        <div class="d-flex flex-wrap gap-3">
+            <a href="/Dashboard" class="btn btn-outline-primary shadow-sm">
+                <i class="fas fa-tachometer-alt me-1"></i> Dashboard
+            </a>
+            <a href="/Products" class="btn btn-outline-success shadow-sm">
+                <i class="fas fa-boxes me-1"></i> Ürünler
+            </a>
+            <a href="/Admin/Logs" class="btn btn-outline-warning shadow-sm">
+                <i class="fas fa-clipboard-list me-1"></i> Loglar
+            </a>
+            <a href="/Admin/Users" class="btn btn-outline-info shadow-sm">
+                <i class="fas fa-users me-1"></i> Kullanıcılar
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Duyuru/Alert -->
+<div class="alert alert-info alert-dismissible fade show shadow-sm" role="alert">
+    <strong>Demo!</strong> Bu uygulama .NET 9 ve Razor Pages ile geliştirilmiştir.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Kapat"></button>
+</div>
+
+<!-- Tema Switcher (örnek) -->
+<div class="d-flex justify-content-end mb-2">
+    <button id="themeToggle" class="btn btn-outline-secondary btn-sm">
+        <i class="fas fa-moon"></i> Tema Değiştir
+    </button>
+</div>
+
+@section Scripts {
+    <script>
+        // Tema switcher (Dark/Light)
+        document.getElementById("themeToggle").addEventListener("click", function () {
+            document.body.classList.toggle("bg-dark");
+            document.body.classList.toggle("text-light");
+        });
+    </script>
+}

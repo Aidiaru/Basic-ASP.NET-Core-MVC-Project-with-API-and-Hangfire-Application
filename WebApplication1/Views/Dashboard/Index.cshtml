@@ -1,0 +1,82 @@
+﻿@model List<WebApplication1.Models.ProductDto>
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<!-- Dashboard Header -->
+<div class="d-flex align-items-center mb-4">
+    <i class="fas fa-tachometer-alt fa-2x text-primary me-2"></i>
+    <h2 class="mt-3 mb-0">Son Eklenen Ürünler</h2>
+</div>
+
+<!-- Dashboard Info Cards -->
+<div class="row mb-4">
+    <div class="col-md-4 mb-2">
+        <div class="card shadow-sm h-100">
+            <div class="card-body text-center">
+                <i class="fas fa-box fa-2x text-success mb-2"></i>
+                <h6 class="card-title">Toplam Ürün</h6>
+                <span class="fs-4 fw-bold">@Model?.Count ?? 0</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-2">
+        <div class="card shadow-sm h-100">
+            <div class="card-body text-center">
+                <i class="fas fa-user fa-2x text-info mb-2"></i>
+                <h6 class="card-title">Kullanıcılar</h6>
+                <span class="fs-4 fw-bold">?</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-2">
+        <div class="card shadow-sm h-100">
+            <div class="card-body text-center">
+                <i class="fas fa-clipboard-list fa-2x text-warning mb-2"></i>
+                <h6 class="card-title">Loglar</h6>
+                <span class="fs-4 fw-bold">?</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+@if (Model != null && Model.Any())
+{
+    <table class="table table-sm table-hover">
+        <thead class="table-light">
+            <tr>
+                <th>Ürün</th>
+                <th>Fiyat</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Take(5))
+            {
+                <tr>
+                    <td>
+                        <span data-bs-toggle="tooltip" title="Ürün adı: @item.Name">@item.Name</span>
+                    </td>
+                    <td>@item.Price ₺</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a asp-controller="Products" asp-action="Index" class="btn btn-outline-primary mt-3">
+        Tüm Ürünleri Gör
+    </a>
+}
+else
+{
+    <p class="text-secondary">Henüz ürün eklenmedi.</p>
+}
+
+@section Scripts {
+    <script>
+        // Bootstrap tooltip
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        });
+    </script>
+}

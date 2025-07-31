@@ -1,0 +1,84 @@
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using System.Net.Http;
+using System.Net.Http.Json;
+using System.Threading.Tasks;
+using System;
+using System.Collections.Generic;
+using WebApplication1.Models;
+using WebApplication1.Services;
+
+namespace WebApplication1.Controllers
+{
+    [AllowAnonymous]
+    public class LoginController : Controller
+    {
+        private readonly LogService _logService;
+        private readonly IHttpClientFactory _clientFactory;
+
+        public LoginController(LogService logService, IHttpClientFactory clientFactory)
+        {
+            _logService = logService;
+            _clientFactory = clientFactory;
+        }
+
+        [HttpGet]
+        public IActionResult Index() => View();
+
+        [HttpPost]
+        public async Task<IActionResult> Index(LoginViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                ViewBag.Message = "Lütfen gerekli alanları doldurun.";
+                return View(model);
+            }
+
+            var client = _clientFactory.CreateClient();
+            client.BaseAddress = new Uri("https://localhost:7209/");
+            var response = await client.PostAsJsonAsync("api/AuthApi/login", model);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                ViewBag.Message = "Geçersiz e-posta veya şifre.";
+                return View(model);
+            }
+
+            var result = await response.Content.ReadFromJsonAsync<LoginResponseDto>();
+
+            // Sadece JWT token'ı session'a ekle
+            HttpContext.Session.SetString("JWToken", result.Token);
+            HttpContext.Session.SetString("UserRole", result.User.Role);
+            HttpContext.Session.SetString("SessionId", result.SessionId);
+
+            // Log kaydı
+            try
+            {
+                await _logService.SendLogAsync(new Log
+                {
+                    Logger = "LoginController",
+                    Message = $"Giriş başarılı: {model.Email}",
+                    Level = "Info"
+                });
+            }
+            catch { }
+
+            return RedirectToAction("Index", "Home");
+        }
+
+        [Authorize]
+        public async Task<IActionResult> Logout()
+        {
+            var email = User.Identity?.Name ?? "Unknown";
+            await _logService.SendLogAsync(new Log
+            {
+                Logger = "LoginController",
+                Message = $"Çıkış yaptı: {email}",
+                Level = "Info"
+            });
+
+            HttpContext.Session.Clear();
+            return RedirectToAction("Index", "Login");
+        }
+    }
+}
