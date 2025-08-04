@@ -3,6 +3,57 @@
   "WorkspaceRootPath": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{CB9D1A0A-377E-4A8C-A39B-E776ABBB1A44}|WebApplication1.csproj|c:\\users\\samet\\belgeler\\webapp\\webapplication1\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CB9D1A0A-377E-4A8C-A39B-E776ABBB1A44}|WebApplication1.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB9D1A0A-377E-4A8C-A39B-E776ABBB1A44}|WebApplication1.csproj|c:\\users\\samet\\belgeler\\webapp\\webapplication1\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CB9D1A0A-377E-4A8C-A39B-E776ABBB1A44}|WebApplication1.csproj|solutionrelative:views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB9D1A0A-377E-4A8C-A39B-E776ABBB1A44}|WebApplication1.csproj|c:\\users\\samet\\belgeler\\webapp\\webapplication1\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CB9D1A0A-377E-4A8C-A39B-E776ABBB1A44}|WebApplication1.csproj|solutionrelative:views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB9D1A0A-377E-4A8C-A39B-E776ABBB1A44}|WebApplication1.csproj|c:\\users\\samet\\belgeler\\webapp\\webapplication1\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CB9D1A0A-377E-4A8C-A39B-E776ABBB1A44}|WebApplication1.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB9D1A0A-377E-4A8C-A39B-E776ABBB1A44}|WebApplication1.csproj|c:\\users\\samet\\belgeler\\webapp\\webapplication1\\models\\productdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB9D1A0A-377E-4A8C-A39B-E776ABBB1A44}|WebApplication1.csproj|solutionrelative:models\\productdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB9D1A0A-377E-4A8C-A39B-E776ABBB1A44}|WebApplication1.csproj|c:\\users\\samet\\belgeler\\webapp\\webapplication1\\models\\log.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB9D1A0A-377E-4A8C-A39B-E776ABBB1A44}|WebApplication1.csproj|solutionrelative:models\\log.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB9D1A0A-377E-4A8C-A39B-E776ABBB1A44}|WebApplication1.csproj|c:\\users\\samet\\belgeler\\webapp\\webapplication1\\models\\logsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB9D1A0A-377E-4A8C-A39B-E776ABBB1A44}|WebApplication1.csproj|solutionrelative:models\\logsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB9D1A0A-377E-4A8C-A39B-E776ABBB1A44}|WebApplication1.csproj|c:\\users\\samet\\belgeler\\webapp\\webapplication1\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB9D1A0A-377E-4A8C-A39B-E776ABBB1A44}|WebApplication1.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E70CFD77-ABE1-4CC3-BAA3-11A85BF82548}|..\\WebAPI\\WebAPI.csproj|c:\\users\\samet\\belgeler\\webapp\\webapi\\controllers\\authapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB9D1A0A-377E-4A8C-A39B-E776ABBB1A44}|WebApplication1.csproj|c:\\users\\samet\\belgeler\\webapp\\webapplication1\\controllers\\registercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB9D1A0A-377E-4A8C-A39B-E776ABBB1A44}|WebApplication1.csproj|solutionrelative:controllers\\registercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB9D1A0A-377E-4A8C-A39B-E776ABBB1A44}|WebApplication1.csproj|c:\\users\\samet\\belgeler\\webapp\\webapplication1\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB9D1A0A-377E-4A8C-A39B-E776ABBB1A44}|WebApplication1.csproj|solutionrelative:controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB9D1A0A-377E-4A8C-A39B-E776ABBB1A44}|WebApplication1.csproj|c:\\users\\samet\\belgeler\\webapp\\webapplication1\\views\\register\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CB9D1A0A-377E-4A8C-A39B-E776ABBB1A44}|WebApplication1.csproj|solutionrelative:views\\register\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB9D1A0A-377E-4A8C-A39B-E776ABBB1A44}|WebApplication1.csproj|c:\\users\\samet\\belgeler\\webapp\\webapplication1\\models\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB9D1A0A-377E-4A8C-A39B-E776ABBB1A44}|WebApplication1.csproj|solutionrelative:models\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{CB9D1A0A-377E-4A8C-A39B-E776ABBB1A44}|WebApplication1.csproj|c:\\users\\samet\\belgeler\\webapp\\webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CB9D1A0A-377E-4A8C-A39B-E776ABBB1A44}|WebApplication1.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -14,24 +65,8 @@
       "RelativeMoniker": "D:0:0:{CB9D1A0A-377E-4A8C-A39B-E776ABBB1A44}|WebApplication1.csproj|solutionrelative:readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CB9D1A0A-377E-4A8C-A39B-E776ABBB1A44}|WebApplication1.csproj|c:\\users\\samet\\belgeler\\webapp\\webapplication1\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CB9D1A0A-377E-4A8C-A39B-E776ABBB1A44}|WebApplication1.csproj|solutionrelative:views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB9D1A0A-377E-4A8C-A39B-E776ABBB1A44}|WebApplication1.csproj|c:\\users\\samet\\belgeler\\webapp\\webapplication1\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CB9D1A0A-377E-4A8C-A39B-E776ABBB1A44}|WebApplication1.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB9D1A0A-377E-4A8C-A39B-E776ABBB1A44}|WebApplication1.csproj|c:\\users\\samet\\belgeler\\webapp\\webapplication1\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CB9D1A0A-377E-4A8C-A39B-E776ABBB1A44}|WebApplication1.csproj|solutionrelative:views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{CB9D1A0A-377E-4A8C-A39B-E776ABBB1A44}|WebApplication1.csproj|c:\\users\\samet\\belgeler\\webapp\\webapplication1\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{CB9D1A0A-377E-4A8C-A39B-E776ABBB1A44}|WebApplication1.csproj|solutionrelative:views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB9D1A0A-377E-4A8C-A39B-E776ABBB1A44}|WebApplication1.csproj|c:\\users\\samet\\belgeler\\webapp\\webapplication1\\views\\register\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CB9D1A0A-377E-4A8C-A39B-E776ABBB1A44}|WebApplication1.csproj|solutionrelative:views\\register\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CB9D1A0A-377E-4A8C-A39B-E776ABBB1A44}|WebApplication1.csproj|c:\\users\\samet\\belgeler\\webapp\\webapplication1\\filters\\authfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -40,10 +75,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{CB9D1A0A-377E-4A8C-A39B-E776ABBB1A44}|WebApplication1.csproj|c:\\users\\samet\\belgeler\\webapp\\webapplication1\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CB9D1A0A-377E-4A8C-A39B-E776ABBB1A44}|WebApplication1.csproj|solutionrelative:controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB9D1A0A-377E-4A8C-A39B-E776ABBB1A44}|WebApplication1.csproj|c:\\users\\samet\\belgeler\\webapp\\webapplication1\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB9D1A0A-377E-4A8C-A39B-E776ABBB1A44}|WebApplication1.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E70CFD77-ABE1-4CC3-BAA3-11A85BF82548}|..\\WebAPI\\WebAPI.csproj|c:\\users\\samet\\belgeler\\webapp\\webapi\\controllers\\logsapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -63,13 +94,6 @@
       "AbsoluteMoniker": "D:0:0:{E70CFD77-ABE1-4CC3-BAA3-11A85BF82548}|..\\WebAPI\\WebAPI.csproj|c:\\users\\samet\\belgeler\\webapp\\webapi\\middlewares\\sessionvalidationmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E70CFD77-ABE1-4CC3-BAA3-11A85BF82548}|..\\WebAPI\\WebAPI.csproj|c:\\users\\samet\\belgeler\\webapp\\webapi\\controllers\\authapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB9D1A0A-377E-4A8C-A39B-E776ABBB1A44}|WebApplication1.csproj|c:\\users\\samet\\belgeler\\webapp\\webapplication1\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB9D1A0A-377E-4A8C-A39B-E776ABBB1A44}|WebApplication1.csproj|solutionrelative:controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E70CFD77-ABE1-4CC3-BAA3-11A85BF82548}|..\\WebAPI\\WebAPI.csproj|c:\\users\\samet\\belgeler\\webapp\\webapi\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -83,63 +107,188 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 8,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebAPI\\Program.cs",
-              "RelativeDocumentMoniker": "..\\WebAPI\\Program.cs",
-              "ToolTip": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebAPI\\Program.cs",
-              "RelativeToolTip": "..\\WebAPI\\Program.cs",
-              "ViewState": "AgIAAGkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-31T08:37:52.526Z",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAuwFEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-04T06:38:53.824Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAtAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "RegisterController.cs",
+              "DocumentMoniker": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\Controllers\\RegisterController.cs",
+              "RelativeDocumentMoniker": "Controllers\\RegisterController.cs",
+              "ToolTip": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\Controllers\\RegisterController.cs",
+              "RelativeToolTip": "Controllers\\RegisterController.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAYwFMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-29T14:18:10.67Z",
+              "WhenOpened": "2025-08-01T11:01:56.524Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAuwCgAAABbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T14:28:30.098Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "Controllers\\LoginController.cs",
+              "ToolTip": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "Controllers\\LoginController.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAA4wCQAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T14:32:35.487Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "README.md",
-              "DocumentMoniker": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\README.md",
-              "RelativeDocumentMoniker": "README.md",
-              "ToolTip": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\README.md",
-              "RelativeToolTip": "README.md",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2025-07-31T07:40:32.374Z",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\Views\\Login\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Login\\Index.cshtml",
+              "ToolTip": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\Views\\Login\\Index.cshtml",
+              "RelativeToolTip": "Views\\Login\\Index.cshtml",
+              "ViewState": "AgIAAH8AAAAAAAAAAAAuwHwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-30T08:01:09.87Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\Views\\Products\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Products\\Index.cshtml",
+              "ToolTip": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\Views\\Products\\Index.cshtml",
+              "RelativeToolTip": "Views\\Products\\Index.cshtml",
+              "ViewState": "AgIAAFABAAAAAAAAAAAqwHkBAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-30T11:43:12.399Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAB8BAAAAAAAAAIAwwDABAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-30T14:19:47.285Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "_ViewImports.cshtml",
-              "DocumentMoniker": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\Views\\_ViewImports.cshtml",
-              "RelativeDocumentMoniker": "Views\\_ViewImports.cshtml",
-              "ToolTip": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\Views\\_ViewImports.cshtml",
-              "RelativeToolTip": "Views\\_ViewImports.cshtml",
+              "Title": "LogsViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\Models\\LogsViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\LogsViewModel.cs",
+              "ToolTip": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\Models\\LogsViewModel.cs",
+              "RelativeToolTip": "Models\\LogsViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-01T13:05:29.769Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProductDto.cs",
+              "DocumentMoniker": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\Models\\ProductDto.cs",
+              "RelativeDocumentMoniker": "Models\\ProductDto.cs",
+              "ToolTip": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\Models\\ProductDto.cs",
+              "RelativeToolTip": "Models\\ProductDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-01T13:05:40.78Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Log.cs",
+              "DocumentMoniker": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\Models\\Log.cs",
+              "RelativeDocumentMoniker": "Models\\Log.cs",
+              "ToolTip": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\Models\\Log.cs",
+              "RelativeToolTip": "Models\\Log.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-01T13:05:36.887Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\Views\\Register\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Register\\Index.cshtml",
+              "ToolTip": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\Views\\Register\\Index.cshtml",
+              "RelativeToolTip": "Views\\Register\\Index.cshtml",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAAAF8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-30T14:19:44.974Z",
+              "WhenOpened": "2025-07-30T08:08:38.314Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
+              "Title": "AuthApiController.cs",
+              "DocumentMoniker": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebAPI\\Controllers\\AuthApiController.cs",
+              "RelativeDocumentMoniker": "..\\WebAPI\\Controllers\\AuthApiController.cs",
+              "ToolTip": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebAPI\\Controllers\\AuthApiController.cs",
+              "RelativeToolTip": "..\\WebAPI\\Controllers\\AuthApiController.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-30T07:03:03.006Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "RegisterViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\Models\\RegisterViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\RegisterViewModel.cs",
+              "ToolTip": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\Models\\RegisterViewModel.cs",
+              "RelativeToolTip": "Models\\RegisterViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-01T11:03:45.995Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
               "Title": "AuthFilter.cs",
               "DocumentMoniker": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\Filters\\AuthFilter.cs",
               "RelativeDocumentMoniker": "Filters\\AuthFilter.cs",
@@ -151,68 +300,55 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAawAwAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T14:18:10.67Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 16,
-              "Title": "AuthApiController.cs",
-              "DocumentMoniker": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebAPI\\Controllers\\AuthApiController.cs",
-              "RelativeDocumentMoniker": "..\\WebAPI\\Controllers\\AuthApiController.cs",
-              "ToolTip": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebAPI\\Controllers\\AuthApiController.cs",
-              "RelativeToolTip": "..\\WebAPI\\Controllers\\AuthApiController.cs",
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "Views\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "Views\\_ViewImports.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-30T07:03:03.006Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-29T14:28:30.098Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABsAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-30T14:19:47.285Z"
+              "WhenOpened": "2025-07-30T14:19:44.974Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\Views\\Login\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Login\\Index.cshtml",
-              "ToolTip": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\Views\\Login\\Index.cshtml",
-              "RelativeToolTip": "Views\\Login\\Index.cshtml",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAADYAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-30T08:01:09.87Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\Views\\Products\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Products\\Index.cshtml",
-              "ToolTip": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\Views\\Products\\Index.cshtml",
-              "RelativeToolTip": "Views\\Products\\Index.cshtml",
-              "ViewState": "AgIAAGoBAAAAAAAAAAAiwIABAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-30T11:43:12.399Z",
-              "EditorCaption": ""
+              "DocumentIndex": 15,
+              "Title": "README.md",
+              "DocumentMoniker": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\README.md",
+              "RelativeDocumentMoniker": "README.md",
+              "ToolTip": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\README.md",
+              "RelativeToolTip": "README.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-07-31T07:40:32.374Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 14,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebAPI\\Program.cs",
+              "RelativeDocumentMoniker": "..\\WebAPI\\Program.cs",
+              "ToolTip": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebAPI\\Program.cs",
+              "RelativeToolTip": "..\\WebAPI\\Program.cs",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-31T08:37:52.526Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
               "Title": "ProductApiController.cs",
               "DocumentMoniker": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebAPI\\Controllers\\ProductApiController.cs",
               "RelativeDocumentMoniker": "..\\WebAPI\\Controllers\\ProductApiController.cs",
@@ -224,7 +360,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 18,
               "Title": "ProductsController.cs",
               "DocumentMoniker": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\Controllers\\ProductsController.cs",
               "RelativeDocumentMoniker": "Controllers\\ProductsController.cs",
@@ -236,19 +372,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\Views\\Register\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Register\\Index.cshtml",
-              "ToolTip": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\Views\\Register\\Index.cshtml",
-              "RelativeToolTip": "Views\\Register\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-30T08:08:38.314Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 19,
               "Title": "LogsApiController.cs",
               "DocumentMoniker": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebAPI\\Controllers\\LogsApiController.cs",
               "RelativeDocumentMoniker": "..\\WebAPI\\Controllers\\LogsApiController.cs",
@@ -256,12 +380,11 @@
               "RelativeToolTip": "..\\WebAPI\\Controllers\\LogsApiController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-30T07:52:06.016Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-30T07:52:06.016Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 20,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -273,7 +396,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 23,
               "Title": "SessionValidationMiddleware.cs",
               "DocumentMoniker": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebAPI\\Middlewares\\SessionValidationMiddleware.cs",
               "RelativeDocumentMoniker": "..\\WebAPI\\Middlewares\\SessionValidationMiddleware.cs",
@@ -285,7 +408,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 21,
               "Title": "AdminController.cs",
               "DocumentMoniker": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\Controllers\\AdminController.cs",
               "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
@@ -297,7 +420,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 25,
               "Title": "UserApiController.cs",
               "DocumentMoniker": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebAPI\\Controllers\\UserApiController.cs",
               "RelativeDocumentMoniker": "..\\WebAPI\\Controllers\\UserApiController.cs",
@@ -309,7 +432,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 24,
               "Title": "WeatherForecastController.cs",
               "DocumentMoniker": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebAPI\\Controllers\\WeatherForecastController.cs",
               "RelativeDocumentMoniker": "..\\WebAPI\\Controllers\\WeatherForecastController.cs",
@@ -318,18 +441,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-30T07:06:55.847Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "LoginController.cs",
-              "DocumentMoniker": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\Controllers\\LoginController.cs",
-              "RelativeDocumentMoniker": "Controllers\\LoginController.cs",
-              "ToolTip": "C:\\Users\\samet\\Belgeler\\WebAPP\\WebApplication1\\Controllers\\LoginController.cs",
-              "RelativeToolTip": "Controllers\\LoginController.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAEwEcAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-29T14:32:35.487Z"
             }
           ]
         }

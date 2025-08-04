@@ -78,11 +78,6 @@
                         </button>
                     </div>
                 </form>
-                <div class="d-flex justify-content-end mt-2">
-                    <button id="themeToggle" class="btn btn-outline-secondary btn-sm">
-                        <i class="fas fa-moon"></i> Tema
-                    </button>
-                </div>
             </div>
         </div>
     </div>
@@ -127,13 +122,37 @@
                 $(this).popover('hide');
             });
 
-            // Tema switcher
-            $('#themeToggle').on('click', function () {
-                $('body').toggleClass('bg-dark text-light');
-            });
         });
     </script>
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+
+    <script>
+        // Sadece Login sayfasında tarayıcı ileri/geri davranışını kontrol et
+        (function() {
+            try {
+                // İleri tuşu navigasyonunu engelle - daha güvenli yöntem
+                window.onbeforeunload = function(e) {
+                    if (window.location.href.indexOf('/Login') > -1 && !isFormSubmitted) {
+                        return '';
+                    }
+                };
+                
+                // Form submit olduğunda ileri kontrolünü kaldır
+                var isFormSubmitted = false;
+                document.querySelector('form').addEventListener('submit', function() {
+                    isFormSubmitted = true;
+                });
+                
+                // Geri tuşuna basıldığında Login sayfasına dön
+                history.pushState(null, null, location.href);
+                window.addEventListener('popstate', function() {
+                    history.pushState(null, null, location.href);
+                });
+            } catch (e) {
+                console.error("Navigation control error:", e);
+            }
+        })();
+    </script>
 }

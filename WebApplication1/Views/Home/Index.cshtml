@@ -79,20 +79,3 @@
     <strong>Demo!</strong> Bu uygulama .NET 9 ve Razor Pages ile geliştirilmiştir.
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Kapat"></button>
 </div>
-
-<!-- Tema Switcher (örnek) -->
-<div class="d-flex justify-content-end mb-2">
-    <button id="themeToggle" class="btn btn-outline-secondary btn-sm">
-        <i class="fas fa-moon"></i> Tema Değiştir
-    </button>
-</div>
-
-@section Scripts {
-    <script>
-        // Tema switcher (Dark/Light)
-        document.getElementById("themeToggle").addEventListener("click", function () {
-            document.body.classList.toggle("bg-dark");
-            document.body.classList.toggle("text-light");
-        });
-    </script>
-}

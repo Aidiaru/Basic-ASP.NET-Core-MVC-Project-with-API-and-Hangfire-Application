@@ -75,6 +75,8 @@ app.UseSession();
 app.UseAuthentication();
 app.UseAuthorization();
 
+// Mevcut yapılandırmaların arasına ekleyin
+
 // 9) Route
 app.MapControllerRoute(
     name: "default",

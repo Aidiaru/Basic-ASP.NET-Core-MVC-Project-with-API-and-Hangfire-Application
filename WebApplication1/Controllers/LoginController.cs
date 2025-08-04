@@ -25,8 +25,46 @@ namespace WebApplication1.Controllers
         }
 
         [HttpGet]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            // Cache kontrolü - bu doğru ve sadece Login sayfasını etkiliyor
+            Response.Headers["Cache-Control"] = "no-cache, no-store, must-revalidate";
+            Response.Headers["Pragma"] = "no-cache";
+            Response.Headers["Expires"] = "0";
+            
+            // Mevcut oturum çıkış işlemleri...
+            if (User.Identity?.IsAuthenticated == true)
+            {
+                string email = "Unknown";
+                
+                // JWT token'da ClaimTypes.Email olarak saklanıyor
+                var emailClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email);
+                if (emailClaim != null)
+                {
+                    email = emailClaim.Value;
+                }
+                
+                var token = HttpContext.Session.GetString("JWToken");
+
+                // Cookie'den çıkış yap
+                await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+
+                // Çıkış log kaydı
+                await _logService.SendLogAsync(
+                    new Log
+                    {
+                        Logger = "LoginController",
+                        Message = $"Login sayfası yüklendiğinde otomatik çıkış yapıldı: {email}",
+                        Level = "Info",
+                        Date = DateTime.UtcNow
+                    },
+                    token
+                );
+
+                HttpContext.Session.Clear();
+                ViewBag.Message = "Önceki oturumunuz sonlandırıldı.";
+            }
+
             return View();
         }
 
@@ -92,10 +130,18 @@ namespace WebApplication1.Controllers
         [HttpGet]
         public async Task<IActionResult> Logout()
         {
-            var email = User.Identity?.Name ?? "Unknown";
+            string email = "Unknown";
+            
+            // JWT token'da ClaimTypes.Email olarak saklanıyor
+            var emailClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email);
+            if (emailClaim != null)
+            {
+                email = emailClaim.Value;
+            }
+            
             var token = HttpContext.Session.GetString("JWToken");
 
-            // Cookie'den de çıkış yap
+            // Cookie'den çıkış yap
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
 
             // Çıkış log kaydı
