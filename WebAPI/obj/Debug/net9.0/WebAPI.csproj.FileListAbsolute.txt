@@ -94,3 +94,4 @@ C:\Users\samet\Belgeler\WebAPP\WebAPI\bin\Debug\net9.0\NLog.Database.dll
 C:\Users\samet\Belgeler\WebAPP\WebAPI\bin\Debug\net9.0\NLog.Extensions.Logging.dll
 C:\Users\samet\Belgeler\WebAPP\WebAPI\bin\Debug\net9.0\NLog.Targets.WebService.dll
 C:\Users\samet\Belgeler\WebAPP\WebAPI\bin\Debug\net9.0\NLog.Web.AspNetCore.dll
+C:\Users\samet\Belgeler\WebAPP\WebAPI\obj\Debug\net9.0\WebAPI.sourcelink.json

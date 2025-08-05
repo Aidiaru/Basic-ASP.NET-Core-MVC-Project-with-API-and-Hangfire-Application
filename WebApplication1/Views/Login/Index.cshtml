@@ -91,7 +91,6 @@
 
             $email.on('input', function () {
                 var v = $(this).val() || '';
-
                 if (!v.includes('@@')) {
                     $(this)
                         .attr('data-bs-content', "E-postanızda en az bir '@@' işareti bulunmalı.")
@@ -100,7 +99,6 @@
                 else {
                     var parts = v.split('@@');
                     var domain = parts[1] || '';
-
                     if (domain === '') {
                         $(this)
                             .attr('data-bs-content', "Bu '@@' işaretinden sonra bir alan adı girin.")
@@ -122,30 +120,31 @@
                 $(this).popover('hide');
             });
 
+            // Form submit sonrası inputları temizle
+            $('form[asp-action="Index"]').on('submit', function () {
+                setTimeout(function () {
+                    $('#emailInput').val('');
+                    $('input[type="password"]').val('');
+                }, 100); // Kısa bir gecikme ile
+            });
         });
     </script>
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
-
     <script>
         // Sadece Login sayfasında tarayıcı ileri/geri davranışını kontrol et
         (function() {
             try {
-                // İleri tuşu navigasyonunu engelle - daha güvenli yöntem
                 window.onbeforeunload = function(e) {
                     if (window.location.href.indexOf('/Login') > -1 && !isFormSubmitted) {
                         return '';
                     }
                 };
-                
-                // Form submit olduğunda ileri kontrolünü kaldır
                 var isFormSubmitted = false;
                 document.querySelector('form').addEventListener('submit', function() {
                     isFormSubmitted = true;
                 });
-                
-                // Geri tuşuna basıldığında Login sayfasına dön
                 history.pushState(null, null, location.href);
                 window.addEventListener('popstate', function() {
                     history.pushState(null, null, location.href);

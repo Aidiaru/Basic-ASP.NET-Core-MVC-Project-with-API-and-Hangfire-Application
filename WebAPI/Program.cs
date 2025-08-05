@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -7,6 +8,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.RateLimiting;
 using WebAPI.Data;
+using WebAPI.Security;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -88,7 +90,8 @@ builder.Services.AddAuthentication(options =>
         ClockSkew = TimeSpan.Zero,
         RoleClaimType = ClaimTypes.Role
     };
-});
+})
+.AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("Basic", null);
 
 
 builder.Services.AddAuthorization();

@@ -1,18 +1,12 @@
 [
   {
     "ContainingType": "AuthApiController",
-    "Method": "Login",
+    "Method": "LoginBasic",
     "RelativePath": "api/AuthApi/login",
-    "HttpMethod": "POST",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "WebAPI.Models.LoginRequestDto",
-        "IsRequired": true
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": []
   },
   {

@@ -47,22 +47,18 @@ public class AuthApiController : ControllerBase
         return Ok();
     }
 
-    [HttpPost("login")]
-    [AllowAnonymous]
-    public async Task<IActionResult> Login([FromBody] LoginRequestDto dto)
+    [Authorize(AuthenticationSchemes = "Basic")]
+    [HttpGet("login")]
+    public async Task<IActionResult> LoginBasic()
     {
-        var user = await _db.Users
-            .Include(u => u.Role)
-            .FirstOrDefaultAsync(u => u.Email == dto.Email);
-
-        if (user == null || !BCrypt.Net.BCrypt.Verify(dto.Password, user.PasswordHash))
-            return Unauthorized(new { Message = "Geçersiz e-posta veya şifre." });
+        var email = User.FindFirst(ClaimTypes.Email)?.Value;
+        var user = await _db.Users.Include(u => u.Role).FirstOrDefaultAsync(u => u.Email == email);
 
         // SessionId'yi yenile
         user.SessionId = Guid.NewGuid();
         await _db.SaveChangesAsync();
 
-        // JWT oluştur
+        // JWT oluştur (mevcut sistemle aynı)
         var claims = new List<Claim>
         {
             new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
@@ -93,4 +89,53 @@ public class AuthApiController : ControllerBase
             }
         });
     }
+
+    //[HttpPost("login")]
+    //[AllowAnonymous]
+    //public async Task<IActionResult> Login([FromBody] LoginRequestDto dto)
+    //{
+    //    var user = await _db.Users
+    //        .Include(u => u.Role)
+    //        .FirstOrDefaultAsync(u => u.Email == dto.Email);
+
+    //    if (user == null || !BCrypt.Net.BCrypt.Verify(dto.Password, user.PasswordHash))
+    //        return Unauthorized(new { Message = "Geçersiz e-posta veya şifre." });
+
+    //    // SessionId'yi yenile
+    //    user.SessionId = Guid.NewGuid();
+    //    await _db.SaveChangesAsync();
+
+    //    // JWT oluştur
+    //    var claims = new List<Claim>
+    //    {
+    //        new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+    //        new Claim(ClaimTypes.Email, user.Email),
+    //        new Claim(ClaimTypes.Role, user.Role.Name),
+    //        new Claim("SessionId", user.SessionId.ToString())
+    //    };
+
+    //    var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_cfg["Jwt:Key"]));
+    //    var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+    //    var token = new JwtSecurityToken(
+    //        claims: claims,
+    //        expires: DateTime.UtcNow.AddHours(2),
+    //        signingCredentials: creds);
+
+    //    var tokenString = new JwtSecurityTokenHandler().WriteToken(token);
+
+    //    return Ok(new LoginResponseDto
+    //    {
+    //        Token = tokenString,
+    //        SessionId = user.SessionId.ToString(),
+    //        User = new UserDto
+    //        {
+    //            Id = user.Id,
+    //            Email = user.Email,
+    //            Role = user.Role.Name
+    //        }
+    //    });
+    //}
+
+
 }

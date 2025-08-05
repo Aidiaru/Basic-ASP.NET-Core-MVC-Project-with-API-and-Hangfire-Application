@@ -99,9 +99,12 @@ class Program
     // Ortak login + token ekleme metodu
     private static async Task AuthenticateClient(HttpClient client)
     {
-        var loginResp = await client.PostAsJsonAsync(
-            "api/AuthApi/login",
-            new { Email = "hangfire@job.com", Password = "1234" });
+        // Basic Auth header ekle
+        var basicAuthValue = Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes("hangfire@job.com:1234"));
+        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", basicAuthValue);
+
+        // GET ile login endpointine istek at
+        var loginResp = await client.GetAsync("api/AuthApi/login");
         loginResp.EnsureSuccessStatusCode();
 
         var loginObj = await loginResp.Content.ReadFromJsonAsync<LoginResponseDto>();

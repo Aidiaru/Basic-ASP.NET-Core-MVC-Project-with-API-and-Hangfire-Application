@@ -79,7 +79,13 @@ namespace WebApplication1.Controllers
 
             var client = _clientFactory.CreateClient();
             client.BaseAddress = new Uri("https://localhost:7209/");
-            var response = await client.PostAsJsonAsync("api/AuthApi/login", model);
+
+            // Basic Auth header oluştur
+            var basicAuthValue = Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes($"{model.Email}:{model.Password}"));
+            client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", basicAuthValue);
+
+            // Sadece GET ile login endpointine istek atıyoruz, body yok!
+            var response = await client.GetAsync("api/AuthApi/login");
 
             if (!response.IsSuccessStatusCode)
             {
@@ -97,11 +103,11 @@ namespace WebApplication1.Controllers
             // JWT'den claims'leri çıkar
             var handler = new JwtSecurityTokenHandler();
             var jwtToken = handler.ReadJwtToken(result.Token);
-            
+
             // Claims Principal oluştur
             var claimsIdentity = new ClaimsIdentity(jwtToken.Claims, CookieAuthenticationDefaults.AuthenticationScheme);
             var principal = new ClaimsPrincipal(claimsIdentity);
-            
+
             // Cookie Authentication ile giriş yap
             await HttpContext.SignInAsync(
                 CookieAuthenticationDefaults.AuthenticationScheme,

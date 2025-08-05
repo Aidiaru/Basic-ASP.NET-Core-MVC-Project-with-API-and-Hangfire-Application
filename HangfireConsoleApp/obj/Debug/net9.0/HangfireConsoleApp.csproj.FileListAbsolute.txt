@@ -106,3 +106,4 @@ C:\Users\samet\Belgeler\WebAPP\HangfireConsoleApp\bin\Debug\net9.0\runtimes\win-
 C:\Users\samet\Belgeler\WebAPP\HangfireConsoleApp\bin\Debug\net9.0\runtimes\win\lib\net9.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\samet\Belgeler\WebAPP\HangfireConsoleApp\bin\Debug\net9.0\Microsoft.AspNetCore.Server.Kestrel.Https.dll
 C:\Users\samet\Belgeler\WebAPP\HangfireConsoleApp\bin\Debug\net9.0\Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions.dll
+C:\Users\samet\Belgeler\WebAPP\HangfireConsoleApp\obj\Debug\net9.0\HangfireConsoleApp.sourcelink.json
